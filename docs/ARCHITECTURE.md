@@ -30,6 +30,7 @@ Next.js (Vercel)  -- static pages (home, work, services, about, contact)
 | Fonts | Satoshi (Fontshare CSS), Inter and JetBrains Mono (`next/font/google`) | Satoshi matches the wordmark. |
 | Email | Resend REST API via `fetch` | No SDK dependency. Free tier covers volume. |
 | Hosting | Vercel | Zero-config Next.js, free tier. |
+| Analytics | @vercel/analytics | Privacy-friendly page views, no cookie banner needed. Built into the host. |
 | Testing | `tsc --noEmit` + `next build` in v1 | Small site; add Playwright for the contact flow in v2. |
 
 Do not add a dependency that overlaps with this table without asking.
