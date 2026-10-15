@@ -82,7 +82,6 @@ Key user flow:
 
 - Can we name the StockD client (the motel) and the Distribute manufacturer
   publicly? Until confirmed, the site describes them without names.
-- Final contact email address. Placeholder: hello@rudrxlabs.com.
 - Screenshots of StockD and Distribute for the product pages (currently
   illustrated with built-in UI mocks).
 - Founder photo and LinkedIn URL for the About page.
