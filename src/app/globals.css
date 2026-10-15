@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Tokens from docs/DESIGN_SYSTEM.md. Change values here, not in components. */
+@theme {
+  --color-bg: #ffffff;
+  --color-surface: #f6f7f9;
+  --color-surface-2: #edf0f4;
+  --color-border: #e2e5ea;
+  --color-text: #0a0a0a;
+  --color-muted: #5b6270;
+  --color-primary: #0074d9;
+  --color-primary-hover: #005fb3;
+  --color-primary-soft: #e6f1fb;
+  --color-primary-on-ink: #4da3ff;
+  --color-ink: #0b1220;
+  --color-ink-2: #131c2e;
+  --color-ink-border: #223049;
+  --color-ink-muted: #9aa4b2;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+
+  --font-display: "Satoshi", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-card: 0 8px 32px -8px rgb(11 18 32 / 0.12);
+  --shadow-elevated: 0 24px 60px -20px rgb(11 18 32 / 0.25);
+  --shadow-glow: 0 0 48px rgb(0 116 217 / 0.25);
+
+  --animate-word-in: word-in 400ms ease-out both;
+
+  @keyframes word-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.35em);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  [id] {
+    scroll-margin-top: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Faint grid used behind the hero and dark bands. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(11 18 32 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(11 18 32 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-grid-ink {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
